@@ -40,32 +40,33 @@ Requerimiento 2
 
     <libros>
         <libro id="L0001"  tipo_clase ="novela" numero_paginas_libro ="456">
-            <titulo>20.000 leguas de viaje submarino</titulo>
+            <titulo_libro>20.000 leguas de viaje submarino</titulo_libro>
             <indice_libro> Este es el indice del libro <indice_libro>
             <sinopsis_libro> Esta es la sinopsis del libro <sinopsis_libro>
-            <capitulos>
-                <capitulo numero_paginas_capitulo="27">
+            <capitulos_libro>
+                <capitulo_libro numero_paginas_capitulo="27">
                     <titulo_capitulo>20.000 leguas de viaje submarino</titulo_capitulo>
-                    <contenido enlace_capitulo="https://www.enlace.com"/>
-                </capitulo>
-                <capitulo numero_paginas_capitulo="43">
+                    <contenido_capitulo enlace_capitulo="https://www.enlace.com"/>
+                </capitulo_libro>
+                <capitulo_libro numero_paginas_capitulo="43">
                     <titulo_capitulo>El monstruo metálico</titulo_capitulo>
-                    <contenido enlace_capitulo="https://www.enlace.com"/>
-                </capitulo>
-            </capitulos>
+                    <contenido_libro enlace_capitulo="https://www.enlace.com"/>
+                </capitulo_libro>
+            </capitulos_libros>
+        </libro>
     </libros>  
 
 <!-- AÑADIMOS LAS REVISTAS-->
 
     <revistas>
         <revista id="R0001" tipo_clase ="investigacion" numero_paginas_revista="75">
-            <titulo>Geo</titulo>
+            <titulo_revista>Geo</titulo_revista>
             <numero_revista>1</numero_revista>
             <indice_revista>Este es el índice de la revista</indice_revista>
             <secciones_revista>
                 <seccion_revista numero_paginas_seccion ="5">
                     <titulo_seccion>Metamorfosis</titulo_seccion>
-                    <contenido enlace_informacion="https://www.enlace.com"/>
+                    <contenido_seccion_revista enlace_revista="https://www.enlace.com"/>
                 </seccion_revista>
             </secciones_revista>
         </revista>
@@ -74,31 +75,31 @@ Requerimiento 2
 <!-- AÑADIMOS LOS PERIÓDICOS -->
 
     <periodicos>
-        <periodico id="P0001" fecha_publicacion="03/05/2022" tipo_clase="nacional">
-            <titulo>El Pais</titulo>
-            <indice> Este es el índice del periodico </indice> 
-            <secciones>
-                <seccion tipo_seccion="economica">
+        <periodico id="P0001" tipo_clase="nacional" fecha_publicacion="03/05/2022">
+            <titulo_periodico>El Pais</titulo_periodico>
+            <indice_periodico> Este es el índice del periodico </indice_periodico> 
+            <secciones_periodico>
+                <seccion_periodico tipo_seccion="economica">
                     <articulos_seccion>
                         <articulo_seccion autor="Jose Carlos Díez">
-                            <contenido enlace_informacion="https://www.enlace.com"/>
+                            <contenido_seccion_articulo enlace_periodico="https://www.enlace.com"/>
                         </articulo_seccion>
                         <articulo_seccion autor="Elisenda Paluzie">
-                            <contenido enlace_informacion="https://www.enlace.com"/>
+                            <contenido_seccion_articulo enlace_periodico="https://www.enlace.com"/>
                         </articulo_seccion>
                     </articulos_seccion>
-                </seccion>
-                <seccion tipo_seccion="nacional">
+                </seccion_periodico>
+                <seccion_periodico tipo_seccion="nacional">
                     <articulos_seccion>
                         <articulo_seccion autor="Gabriela Cañas">
-                            <contenido enlace_informacion="https://www.enlace.com"/>
+                            <contenido_seccion_articulo enlace_periodico="https://www.enlace.com"/>
                         </articulo_seccion>
                         <articulo_seccion autor="Jesus Mota">
-                            <contenido enlace_informacion="https://www.enlace.com"/>
+                            <contenido_seccion_articulo enlace_periodico="https://www.enlace.com"/>
                         </articulo_seccion>
                     </articulos_seccion>
-                </seccion>
-            </secciones>
+                </seccion_periodico>
+            </secciones_periodico>
         </periodico>
     </periodicos>
 </biblioteca>
