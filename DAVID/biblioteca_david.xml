@@ -35,135 +35,70 @@ Requerimiento 2
     IMPORTANTE: Cada alumno propondrá una solución de XML y XSD. Una vez todos los alumnos hayan puesto todas sus soluciones, se cotejará con el resto para poner la solución final.
  -->
 <biblioteca>
+
 <!-- AÑADIMOS LOS LIBROS-->
+
     <libros>
-        <libro id="L" numero_libro="0001">
+        <libro id="L0001"  tipo_clase ="novela" numero_paginas_libro ="456">
             <titulo>20.000 leguas de viaje submarino</titulo>
-            <numero_paginas>456</numero_paginas>
-            <clase tipo_clase ="novela"/>
+            <indice_libro> Este es el indice del libro <indice_libro>
+            <sinopsis_libro> Esta es la sinopsis del libro <sinopsis_libro>
             <capitulos>
-                <capitulo id="1">
-                    <titulo_capitulo>Destrucción buque</titulo_capitulo>
-                    <numero_paginas_capitulo>27<numero_paginas_capitulo>
-                    <contenido enlace_informacion="https://www.enlace.com"/>
+                <capitulo numero_paginas_capitulo="27">
+                    <titulo_capitulo>20.000 leguas de viaje submarino</titulo_capitulo>
+                    <contenido enlace_capitulo="https://www.enlace.com"/>
                 </capitulo>
-                <capitulo id="2">
+                <capitulo numero_paginas_capitulo="43">
                     <titulo_capitulo>El monstruo metálico</titulo_capitulo>
-                    <numero_paginas_capitulo>43<numero_paginas_capitulo>
-                    <contenido enlace_informacion="https://www.enlace.com"/>
+                    <contenido enlace_capitulo="https://www.enlace.com"/>
                 </capitulo>
             </capitulos>
-        </libro>
-        <libro id="L" numero_libro="0002">
-            <titulo>El ratoncito Perez</titulo>
-            <numero_paginas>85</numero_paginas>
-            <clase tipo_clase ="infantil"/>
-            <capitulos>
-                <capitulo id="1">
-                    <titulo_capitulo>Intercambio</titulo_capitulo>
-                    <numero_paginas_capitulo>8<numero_paginas_capitulo>
-                    <contenido enlace_informacion="https://www.enlace.com"/>
-                </capitulo>
-                <capitulo id="2">
-                    <titulo_capitulo>Tu diente por un regalo</titulo_capitulo>
-                    <numero_paginas_capitulo>12<numero_paginas_capitulo>
-                    <contenido enlace_informacion="https://www.enlace.com"/>
-                </capitulo>
-            </capitulos>
-        </libro>
-    </libros>       
+    </libros>  
+
 <!-- AÑADIMOS LAS REVISTAS-->
+
     <revistas>
-        <revista id="R" numero_revista="0001">
+        <revista id="R0001" tipo_clase ="investigacion" numero_paginas_revista="75">
             <titulo>Geo</titulo>
-            <clase tipo_clase ="investigacion"/>
-            <numero_paginas>75</numero_paginas>
-            <indice>
-                <seccion id="1">
+            <numero_revista>1</numero_revista>
+            <indice_revista>Este es el índice de la revista</indice_revista>
+            <secciones_revista>
+                <seccion_revista numero_paginas_seccion ="5">
                     <titulo_seccion>Metamorfosis</titulo_seccion>
-                    <numero_paginas_capitulo>5<numero_paginas_capitulo>
                     <contenido enlace_informacion="https://www.enlace.com"/>
-                </seccion>
-                <seccion id="2">
-                    <titulo_seccion>El volcan</titulo_seccion>
-                    <numero_paginas_capitulo>7<numero_paginas_capitulo>
-                    <contenido enlace_informacion="https://www.enlace.com"/>
-                </seccion>
-            </indice>
-        </revista>
-        <revista id="R" numero_revista="0002">
-            <titulo>Mens Health</titulo>
-            <clase tipo_clase ="otras"/>
-            <numero_paginas>54</numero_paginas>
-            <indice>
-                <seccion id="1">
-                    <titulo_seccion>Como mejorar tu postura con el yoga</titulo_seccion>
-                    <numero_paginas_capitulo>7<numero_paginas_capitulo>
-                    <contenido enlace_informacion="https://www.enlace.com"/>
-                </seccion>
-                <seccion id="2">
-                    <titulo_seccion>Ejercicios para fortalecer las piernas</titulo_seccion>
-                    <numero_paginas_capitulo>3<numero_paginas_capitulo>
-                    <contenido enlace_informacion="https://www.enlace.com"/>
-                </seccion>
-            </indice>
+                </seccion_revista>
+            </secciones_revista>
         </revista>
     </revistas>
+
 <!-- AÑADIMOS LOS PERIÓDICOS -->
+
     <periodicos>
-        <periodico id="P" numero_periodico="0001" fecha_publicacion="03/05/2022" tipo_clase="nacional">
+        <periodico id="P0001" fecha_publicacion="03/05/2022" tipo_clase="nacional">
             <titulo>El Pais</titulo>
-            <indice>
-                <secciones>
-                    <seccion tipo_seccion"economica">
-                        <articulos>
-                            <articulo id_articulo="001" autor="Jose Carlos Díez">
-                                <contenido enlace_informacion="https://www.enlace.com"/>
-                            </articulo>
-                            <articulo id_articulo="002" autor="Elisenda Paluzie">
-                                <contenido enlace_informacion="https://www.enlace.com"/>
-                            </articulo>
-                        </articulos>
-                    </seccion>
-                    <seccion tipo_seccion"nacional">
-                        <articulos>
-                            <articulo id_articulo="003" autor="Gabriela Cañas">
-                                <contenido enlace_informacion="https://www.enlace.com"/>
-                            </articulo>
-                            <articulo id_articulo="004" autor="Jesus Mota">
-                                <contenido enlace_informacion="https://www.enlace.com"/>
-                            </articulo>
-                        </articulos>
-                    </seccion>
-                </secciones>
-            </indice>      
+            <indice> Este es el índice del periodico </indice> 
+            <secciones>
+                <seccion tipo_seccion="economica">
+                    <articulos_seccion>
+                        <articulo_seccion autor="Jose Carlos Díez">
+                            <contenido enlace_informacion="https://www.enlace.com"/>
+                        </articulo_seccion>
+                        <articulo_seccion autor="Elisenda Paluzie">
+                            <contenido enlace_informacion="https://www.enlace.com"/>
+                        </articulo_seccion>
+                    </articulos_seccion>
+                </seccion>
+                <seccion tipo_seccion="nacional">
+                    <articulos_seccion>
+                        <articulo_seccion autor="Gabriela Cañas">
+                            <contenido enlace_informacion="https://www.enlace.com"/>
+                        </articulo_seccion>
+                        <articulo_seccion autor="Jesus Mota">
+                            <contenido enlace_informacion="https://www.enlace.com"/>
+                        </articulo_seccion>
+                    </articulos_seccion>
+                </seccion>
+            </secciones>
         </periodico>
-        <periodico id="P" numero_periodico="0002" fecha_publicacion="04/05/2022" tipo_clase="internacional">
-            <titulo>Daily Planet</titulo>
-            <indice>    
-                <secciones>
-                    <seccion tipo_seccion"internacional">
-                        <articulos>
-                            <articulo id_articulo="001" autor="Lois Lane">
-                                <contenido enlace_informacion="https://www.enlace.com"/>
-                            </articulo>
-                            <articulo id_articulo="002" autor="Clark kent">
-                                <contenido enlace_informacion="https://www.enlace.com"/>
-                            </articulo>
-                        </articulos>
-                    </seccion>
-                    <seccion tipo_seccion"nacional">
-                        <articulos>
-                            <articulo id_articulo="003" autor="Perry White">
-                                <contenido enlace_informacion="https://www.enlace.com"/>
-                            </articulo>
-                            <articulo id_articulo="004" autor="Olson Brent">
-                                <contenido enlace_informacion="https://www.enlace.com"/>
-                            </articulo>
-                        </articulos>
-                    </seccion>
-                </secciones>
-            </indice>       
-        </periodico>      
     </periodicos>
 </biblioteca>
