@@ -1,0 +1,20 @@
+<!ELEMENT biblioteca (libros,revistas,periodicos)>
+
+<!ELEMENT libros (libro?)>
+<!ATTLIST libros id CDATA #REQUIRED>
+<!ATTLIST libros numero_libro CDATA #REQUIRED>
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT numero_paginas (#PCDATA)>
+<!ELEMENT clase (tipo_clase)>
+
+
+
+
+
+<!ELEMENT revistas (revista?)>
+
+
+
+
+<!ELEMENT periodicos (periodico?)>

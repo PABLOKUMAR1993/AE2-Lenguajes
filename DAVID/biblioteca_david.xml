@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "dtd_biblioteca_david.dtd">
+<!-- Enunciado
+Vamos a elaborar una estructura de base de datos en XML que permita almacenar los datos de una biblioteca en la red con las siguientes características:
+•	Existen tres tipos de documentos almacenados en la biblioteca: libros, revistas y periódicos. Todos los documentos están identificados por el atributo Id.
+
+        o	Para los libros este atributo empieza con la letra “L” seguido de 4 dígitos identificativos.
+        o	Para los periódicos este atributo empieza por la letra “P” seguido de los 4 dígitos identificativos.
+        o	En el caso de las revistas empieza por la letra “R”.
+
+•	Los libros a su vez son clasificados en novela, infantil o didáctico. Cada libro contiene un atributo identificativo de su clase denominado tipo_clase. Dentro de cada 
+    libro se tiene un título, varios capítulos con el título en su interior, un índice y una sinopsis. Tanto en libro como en capítulo existe un atributo que contiene el 
+    número de páginas del libro o del capítulo, según corresponda. Cada capítulo contiene un elemento denominado contenido, en el que se tiene un atributo con el enlace a 
+    la información.
+
+•	Las revistas a su vez son clasificadas en: informática, corazón, coches, investigación y otras. Cada revista tiene el atributo tipo_clase identificativo de la clase 
+    a la que pertenece. Dentro de cada revista tenemos el título, el número de la revista, un índice de contenido y las secciones. En cada sección y en la revista se tiene 
+    un atributo que contiene el número de páginas. Además, en cada sección se tiene la parte denominada contenido, en la que se tiene un atributo con un enlace a la información.
+
+•	Los periódicos se clasifican en nacionales e internacionales. Cada periódico contiene el atributo tipo_clase identificativo de la clase a la que pertenece y un atributo
+    que incluye la fecha de publicación. Dentro de los periódicos tenemos secciones y un índice. Cada sección debe contener un atributo identificativo del tipo de sección, 
+    que puede ser: económica, opinión, deportes, nacional o internacional. Las secciones se dividen en artículos, en donde se define en un atributo el autor. 
+    Finalmente, el contenido será el último elemento del árbol, que necesita un atributo que referencie a la información.
+
+Requerimiento 1
+    Crear un XML con el modelo de datos indicado en el enunciado.
+    Elaborar un DTD que permita validar el documento XML.
+    Validar el documento con alguna aplicación externa e incluir capturas de pantalla.
+    IMPORTANTE: Cada alumno propondrá una solución de XML y DTD. Una vez todos los alumnos hayan puesto todas sus soluciones, se cotejará con el resto para poner la solución final.
+    Valoración: 5 puntos sobre 10
+
+Requerimiento 2
+    Elaborar un XSD que permita validar el documento XML.
+    Validar el documento con alguna aplicación externa e incluir capturas de pantalla.
+    IMPORTANTE: Cada alumno propondrá una solución de XML y XSD. Una vez todos los alumnos hayan puesto todas sus soluciones, se cotejará con el resto para poner la solución final.
+ -->
+<biblioteca>
+<!-- AÑADIMOS LOS LIBROS-->
+    <libros>
+        <libro id="L" numero_libro="0001">
+            <titulo>20.000 leguas de viaje submarino</titulo>
+            <numero_paginas>456</numero_paginas>
+            <clase tipo_clase ="novela"/>
+            <capitulos>
+                <capitulo id="1">
+                    <titulo_capitulo>Destrucción buque</titulo_capitulo>
+                    <numero_paginas_capitulo>27<numero_paginas_capitulo>
+                    <contenido enlace_informacion="https://www.enlace.com"/>
+                </capitulo>
+                <capitulo id="2">
+                    <titulo_capitulo>El monstruo metálico</titulo_capitulo>
+                    <numero_paginas_capitulo>43<numero_paginas_capitulo>
+                    <contenido enlace_informacion="https://www.enlace.com"/>
+                </capitulo>
+            </capitulos>
+        </libro>
+        <libro id="L" numero_libro="0002">
+            <titulo>El ratoncito Perez</titulo>
+            <numero_paginas>85</numero_paginas>
+            <clase tipo_clase ="infantil"/>
+            <capitulos>
+                <capitulo id="1">
+                    <titulo_capitulo>Intercambio</titulo_capitulo>
+                    <numero_paginas_capitulo>8<numero_paginas_capitulo>
+                    <contenido enlace_informacion="https://www.enlace.com"/>
+                </capitulo>
+                <capitulo id="2">
+                    <titulo_capitulo>Tu diente por un regalo</titulo_capitulo>
+                    <numero_paginas_capitulo>12<numero_paginas_capitulo>
+                    <contenido enlace_informacion="https://www.enlace.com"/>
+                </capitulo>
+            </capitulos>
+        </libro>
+    </libros>       
+<!-- AÑADIMOS LAS REVISTAS-->
+    <revistas>
+        <revista id="R" numero_revista="0001">
+            <titulo>Geo</titulo>
+            <clase tipo_clase ="investigacion"/>
+            <numero_paginas>75</numero_paginas>
+            <indice>
+                <seccion id="1">
+                    <titulo_seccion>Metamorfosis</titulo_seccion>
+                    <numero_paginas_capitulo>5<numero_paginas_capitulo>
+                    <contenido enlace_informacion="https://www.enlace.com"/>
+                </seccion>
+                <seccion id="2">
+                    <titulo_seccion>El volcan</titulo_seccion>
+                    <numero_paginas_capitulo>7<numero_paginas_capitulo>
+                    <contenido enlace_informacion="https://www.enlace.com"/>
+                </seccion>
+            </indice>
+        </revista>
+        <revista id="R" numero_revista="0002">
+            <titulo>Mens Health</titulo>
+            <clase tipo_clase ="otras"/>
+            <numero_paginas>54</numero_paginas>
+            <indice>
+                <seccion id="1">
+                    <titulo_seccion>Como mejorar tu postura con el yoga</titulo_seccion>
+                    <numero_paginas_capitulo>7<numero_paginas_capitulo>
+                    <contenido enlace_informacion="https://www.enlace.com"/>
+                </seccion>
+                <seccion id="2">
+                    <titulo_seccion>Ejercicios para fortalecer las piernas</titulo_seccion>
+                    <numero_paginas_capitulo>3<numero_paginas_capitulo>
+                    <contenido enlace_informacion="https://www.enlace.com"/>
+                </seccion>
+            </indice>
+        </revista>
+    </revistas>
+<!-- AÑADIMOS LOS PERIÓDICOS -->
+    <periodicos>
+        <periodico id="P" numero_periodico="0001" fecha_publicacion="03/05/2022" tipo_clase="nacional">
+            <titulo>El Pais</titulo>
+            <indice>
+                <secciones>
+                    <seccion tipo_seccion"economica">
+                        <articulos>
+                            <articulo id_articulo="001" autor="Jose Carlos Díez">
+                                <contenido enlace_informacion="https://www.enlace.com"/>
+                            </articulo>
+                            <articulo id_articulo="002" autor="Elisenda Paluzie">
+                                <contenido enlace_informacion="https://www.enlace.com"/>
+                            </articulo>
+                        </articulos>
+                    </seccion>
+                    <seccion tipo_seccion"nacional">
+                        <articulos>
+                            <articulo id_articulo="003" autor="Gabriela Cañas">
+                                <contenido enlace_informacion="https://www.enlace.com"/>
+                            </articulo>
+                            <articulo id_articulo="004" autor="Jesus Mota">
+                                <contenido enlace_informacion="https://www.enlace.com"/>
+                            </articulo>
+                        </articulos>
+                    </seccion>
+                </secciones>
+            </indice>      
+        </periodico>
+        <periodico id="P" numero_periodico="0002" fecha_publicacion="04/05/2022" tipo_clase="internacional">
+            <titulo>Daily Planet</titulo>
+            <indice>    
+                <secciones>
+                    <seccion tipo_seccion"internacional">
+                        <articulos>
+                            <articulo id_articulo="001" autor="Lois Lane">
+                                <contenido enlace_informacion="https://www.enlace.com"/>
+                            </articulo>
+                            <articulo id_articulo="002" autor="Clark kent">
+                                <contenido enlace_informacion="https://www.enlace.com"/>
+                            </articulo>
+                        </articulos>
+                    </seccion>
+                    <seccion tipo_seccion"nacional">
+                        <articulos>
+                            <articulo id_articulo="003" autor="Perry White">
+                                <contenido enlace_informacion="https://www.enlace.com"/>
+                            </articulo>
+                            <articulo id_articulo="004" autor="Olson Brent">
+                                <contenido enlace_informacion="https://www.enlace.com"/>
+                            </articulo>
+                        </articulos>
+                    </seccion>
+                </secciones>
+            </indice>       
+        </periodico>      
+    </periodicos>
+</biblioteca>
