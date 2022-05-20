@@ -34,23 +34,24 @@ Requerimiento 2
     Validar el documento con alguna aplicación externa e incluir capturas de pantalla.
     IMPORTANTE: Cada alumno propondrá una solución de XML y XSD. Una vez todos los alumnos hayan puesto todas sus soluciones, se cotejará con el resto para poner la solución final.
  -->
-<biblioteca>
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:noNamespaceSchemaLocation= "xsd_biblioteca_david.xsd">
 
 <!-- AÑADIMOS LOS LIBROS-->
 
     <libros>
         <libro id="L0001"  tipo_clase ="novela" numero_paginas_libro ="456">
             <titulo_libro>20.000 leguas de viaje submarino</titulo_libro>
-            <indice_libro> Este es el indice del libro <indice_libro>
-            <sinopsis_libro> Esta es la sinopsis del libro <sinopsis_libro>
-            <capitulos_libro>
+            <indice_libro> Este es el indice del libro </indice_libro>
+            <sinopsis_libro> Esta es la sinopsis del libro </sinopsis_libro>
+            <capitulos_libros>
                 <capitulo_libro numero_paginas_capitulo="27">
                     <titulo_capitulo>20.000 leguas de viaje submarino</titulo_capitulo>
                     <contenido_capitulo enlace_capitulo="https://www.enlace.com"/>
                 </capitulo_libro>
                 <capitulo_libro numero_paginas_capitulo="43">
                     <titulo_capitulo>El monstruo metálico</titulo_capitulo>
-                    <contenido_libro enlace_capitulo="https://www.enlace.com"/>
+                    <contenido_capitulo enlace_capitulo="https://www.enlace.com"/>
                 </capitulo_libro>
             </capitulos_libros>
         </libro>
@@ -66,7 +67,7 @@ Requerimiento 2
             <secciones_revista>
                 <seccion_revista numero_paginas_seccion ="5">
                     <titulo_seccion>Metamorfosis</titulo_seccion>
-                    <contenido_seccion_revista enlace_revista="https://www.enlace.com"/>
+                    <contenido_seccion_enlace enlace_revista="https://www.enlace.com"/>
                 </seccion_revista>
             </secciones_revista>
         </revista>
@@ -82,20 +83,20 @@ Requerimiento 2
                 <seccion_periodico tipo_seccion="economica">
                     <articulos_seccion>
                         <articulo_seccion autor="Jose Carlos Díez">
-                            <contenido_seccion_articulo enlace_periodico="https://www.enlace.com"/>
+                            <contenido_articulo_enlace enlace_periodico="https://www.enlace.com"/>
                         </articulo_seccion>
                         <articulo_seccion autor="Elisenda Paluzie">
-                            <contenido_seccion_articulo enlace_periodico="https://www.enlace.com"/>
+                            <contenido_articulo_enlace enlace_periodico="https://www.enlace.com"/>
                         </articulo_seccion>
                     </articulos_seccion>
                 </seccion_periodico>
                 <seccion_periodico tipo_seccion="nacional">
                     <articulos_seccion>
                         <articulo_seccion autor="Gabriela Cañas">
-                            <contenido_seccion_articulo enlace_periodico="https://www.enlace.com"/>
+                            <contenido_articulo_enlace enlace_periodico="https://www.enlace.com"/>
                         </articulo_seccion>
                         <articulo_seccion autor="Jesus Mota">
-                            <contenido_seccion_articulo enlace_periodico="https://www.enlace.com"/>
+                            <contenido_articulo_enlace enlace_periodico="https://www.enlace.com"/>
                         </articulo_seccion>
                     </articulos_seccion>
                 </seccion_periodico>

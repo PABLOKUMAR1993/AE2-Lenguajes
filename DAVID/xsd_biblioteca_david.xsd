@@ -1,0 +1,50 @@
+
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+    <element name="bilbioteca">
+        <complexType>
+            <sequence>
+                <element name="libros">
+                    <complexType>
+                        <sequence>
+                            <element name="libro">
+                                <complexType>
+                                    <sequence>
+                                        <element name="titulo_libro" type="string"></element>
+                                        <element name="indice_libro" type="string"></element>
+                                        <element name="sinopsis_libro" type="string"></element>
+                                        <element name="capitulos_libros">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="capitulo_libro"> 
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="titulo_capitulo" type="string"></element>
+                                                                <element name="contenido_capitulo" type="string"></element>
+                                                            </sequence>
+                                                        </complexType>
+                                                </sequence>
+                                            </complexType>
+                                    </sequence>
+                                </complexType>
+                        </sequence>
+                    /complexType>  
+                <element name="revistas"/>
+
+
+
+
+
+
+
+                <element name="periodicos"/>
+
+
+
+
+
+                
+            </sequence>
+        </complexType>
+    </element>
+</schema>
