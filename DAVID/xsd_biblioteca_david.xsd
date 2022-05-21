@@ -32,7 +32,7 @@
                                                         <complexType>
                                                             <sequence>
                                                                 <element name="titulo_capitulo" type="string"></element>
-                                                                <element name="contenido_capitulo" type="string">
+                                                                <element name="contenido_capitulo">
                                                                     <complexType>
                                                                         <simpleContent>
                                                                         <extension base="string">

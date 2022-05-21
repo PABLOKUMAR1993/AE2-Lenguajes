@@ -47,11 +47,11 @@ Requerimiento 2
             <capitulos_libros>
                 <capitulo_libro numero_paginas_capitulo="27">
                     <titulo_capitulo>20.000 leguas de viaje submarino</titulo_capitulo>
-                    <contenido_capitulo enlace_capitulo="https://www.enlace.com"/>
+                    <contenido_capitulo enlace_capitulo="www.enlace.com"/>
                 </capitulo_libro>
                 <capitulo_libro numero_paginas_capitulo="43">
                     <titulo_capitulo>El monstruo metálico</titulo_capitulo>
-                    <contenido_capitulo enlace_capitulo="https://www.enlace.com"/>
+                    <contenido_capitulo enlace_capitulo="www.enlace.com"/>
                 </capitulo_libro>
             </capitulos_libros>
         </libro>
