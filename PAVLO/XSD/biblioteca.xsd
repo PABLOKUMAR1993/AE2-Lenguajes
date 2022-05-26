@@ -13,173 +13,191 @@
 
     <element name="biblioteca">
         <complexType>
-            <choice> <!--Puedo necesitar enviar un libro, varios o ninguno, porque por ejemplo sólo puedo tener revistas en un momento dado-->
+            <sequence> <!--Puedo necesitar enviar un libro, varios o ninguno, porque por ejemplo sólo puedo tener revistas en un momento dado-->
 
                 <!--LIBRO-->
 
-                <element name="libro">
+                <element name="libros">
                     <complexType>
-
-                        <sequence> <!--Dado que si voy a pasar un libro, entiendo que es obligatoria toda la información y en ese orden concreto-->
-                            <element name="titulo_libro" type="string" />
-                            <element name="capitulo_libro" >
-                                <complexType>
-                                    <sequence>
-                                        <element name="titulo_capitulo" type="string" />
-                                        <element name="contenido_capitulo" >
-                                            <complexType>
-                                                <simpleContent>
-                                                    <extension base="string">
-                                                        <attribute name="enlace_capitulo" type="string" use="required" />
-                                                    </extension>
-                                                </simpleContent>
-                                            </complexType>
-                                        </element>
-                                    </sequence>
-                                    <attribute name="numero_paginas_capitulo" type="integer" use="required" />
-                                </complexType>
-                            </element>
-                            <element name="indice_libro"/>
-                            <element name="sinopsis_libro"/>
-                        </sequence>
-
-
-                        <attribute name="id" use="required">
-                            <simpleType>
-                                <restriction base="string">
-                                    <length value="5" />
-                                </restriction>
-                            </simpleType>
-                        </attribute>
-                        <attribute name="tipo_clase" use="required">
-                            <simpleType>
-                                <restriction base="string" >
-                                    <enumeration value="novela" />
-                                    <enumeration value="infantil" />
-                                    <enumeration value="didactico" />
-                                </restriction>
-                            </simpleType>
-                        </attribute>
-                        <attribute name="numero_paginas_libro" type="integer" use="required" />
-
-                    </complexType>
-                </element>
-
-                <!--REVISTA-->
-
-                <element name="revista">
-                    <complexType>
-
                         <sequence>
-                            <element name="titulo_revista" type="string" />
-                            <element name="numero_revista" type="integer" />
-                            <element name="indice_revista" type="string" />
-                            <element name="seccion_revista">
+                            <element name="libro">
                                 <complexType>
+
                                     <sequence>
-                                        <element name="contenido_revista">
-                                            <complexType>
-                                                <simpleContent>
-                                                    <extension base="string">
-                                                        <attribute name="enlace_cont" type="string" use="required" />
-                                                    </extension>
-                                                </simpleContent>
-                                            </complexType>
-                                        </element>
-                                    </sequence>
-                                    <attribute name="numero_paginas_seccion" type="integer" use="required" />
-                                </complexType>
-                            </element>
-                        </sequence>
-
-
-                        <attribute name="id" use="required">
-                            <simpleType>
-                                <restriction base="string">
-                                    <length value="5" />
-                                </restriction>
-                            </simpleType>
-                        </attribute>
-                        <attribute name="tipo_clase" use="required">
-                            <simpleType>
-                                <restriction base="string">
-                                    <enumeration value="informatica" />
-                                    <enumeration value="corazon" />
-                                    <enumeration value="investigacion" />
-                                    <enumeration value="otras" />
-                                </restriction>
-                            </simpleType>
-                        </attribute>
-                        <attribute name="numero_paginas_revista" type="integer" use="required" />
-
-                    </complexType>
-                </element>
-
-                <!--PERIODICO-->
-
-                <element name="periodico">
-                    <complexType>
-
-                        <sequence>
-                            <element name="seccion_periodico">
-                                <complexType>
-                                    <sequence>
-                                        <element name="articulo_periodico">
+                                        <!--Dado que si voy a pasar un libro, entiendo que es obligatoria toda la información y en ese orden concreto-->
+                                        <element name="titulo_libro" type="string" />
+                                        <element name="capitulo_libro">
                                             <complexType>
                                                 <sequence>
-                                                    <element name="contenido_articulo">
+                                                    <element name="titulo_capitulo" type="string" />
+                                                    <element name="contenido_capitulo">
                                                         <complexType>
                                                             <simpleContent>
                                                                 <extension base="string">
-                                                                    <attribute name="enlace_periodico" type="string" use="required"/>
+                                                                    <attribute name="enlace_capitulo" type="string" use="required" />
                                                                 </extension>
                                                             </simpleContent>
                                                         </complexType>
                                                     </element>
                                                 </sequence>
-                                                <attribute name="autor" type="string" use="required" />
+                                                <attribute name="numero_paginas_capitulo" type="integer" use="required" />
+                                            </complexType>
+                                        </element>
+                                        <element name="indice_libro" />
+                                        <element name="sinopsis_libro" />
+                                    </sequence>
+
+
+                                    <attribute name="id" use="required">
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <length value="5" />
+                                            </restriction>
+                                        </simpleType>
+                                    </attribute>
+                                    <attribute name="tipo_clase" use="required">
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <enumeration value="novela" />
+                                                <enumeration value="infantil" />
+                                                <enumeration value="didactico" />
+                                            </restriction>
+                                        </simpleType>
+                                    </attribute>
+                                    <attribute name="numero_paginas_libro" type="integer" use="required" />
+
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+
+                <!--REVISTA-->
+
+                <element name="revistas">
+                    <complexType>
+                        <sequence>
+                            <element name="revista">
+                                <complexType>
+
+                                    <sequence>
+                                        <element name="titulo_revista" type="string" />
+                                        <element name="numero_revista" type="integer" />
+                                        <element name="indice_revista" type="string" />
+                                        <element name="seccion_revista">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="contenido_revista">
+                                                        <complexType>
+                                                            <simpleContent>
+                                                                <extension base="string">
+                                                                    <attribute name="enlace_cont" type="string" use="required" />
+                                                                </extension>
+                                                            </simpleContent>
+                                                        </complexType>
+                                                    </element>
+                                                </sequence>
+                                                <attribute name="numero_paginas_seccion" type="integer" use="required" />
                                             </complexType>
                                         </element>
                                     </sequence>
-                                    <attribute name="tipo_seccion" use="required">
+
+
+                                    <attribute name="id" use="required">
                                         <simpleType>
                                             <restriction base="string">
-                                                <enumeration value="economica" />
-                                                <enumeration value="opinion" />
-                                                <enumeration value="deportes" />
+                                                <length value="5" />
+                                            </restriction>
+                                        </simpleType>
+                                    </attribute>
+                                    <attribute name="tipo_clase" use="required">
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <enumeration value="informatica" />
+                                                <enumeration value="corazon" />
+                                                <enumeration value="investigacion" />
+                                                <enumeration value="otras" />
+                                            </restriction>
+                                        </simpleType>
+                                    </attribute>
+                                    <attribute name="numero_paginas_revista" type="integer" use="required" />
+
+                                </complexType>
+                            </element>
+                        </sequence>
+                    </complexType>
+                </element>
+
+                <!--PERIODICO-->
+
+                <element name="periodicos">
+                    <complexType>
+                        <sequence>
+                            <element name="periodico">
+                                <complexType>
+
+                                    <sequence>
+                                        <element name="seccion_periodico">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="articulo_periodico">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="contenido_articulo">
+                                                                    <complexType>
+                                                                        <simpleContent>
+                                                                            <extension base="string">
+                                                                                <attribute name="enlace_periodico" type="string" use="required" />
+                                                                            </extension>
+                                                                        </simpleContent>
+                                                                    </complexType>
+                                                                </element>
+                                                            </sequence>
+                                                            <attribute name="autor" type="string" use="required" />
+                                                        </complexType>
+                                                    </element>
+                                                </sequence>
+                                                <attribute name="tipo_seccion" use="required">
+                                                    <simpleType>
+                                                        <restriction base="string">
+                                                            <enumeration value="economica" />
+                                                            <enumeration value="opinion" />
+                                                            <enumeration value="deportes" />
+                                                            <enumeration value="nacional" />
+                                                            <enumeration value="internacional" />
+                                                        </restriction>
+                                                    </simpleType>
+                                                </attribute>
+                                            </complexType>
+                                        </element>
+                                        <element name="indice_periodico" />
+                                    </sequence>
+
+
+                                    <attribute name="id" use="required">
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <length value="5"></length>
+                                            </restriction>
+                                        </simpleType>
+                                    </attribute>
+                                    <attribute name="tipo_clase" use="required">
+                                        <simpleType>
+                                            <restriction base="string">
                                                 <enumeration value="nacional" />
                                                 <enumeration value="internacional" />
                                             </restriction>
                                         </simpleType>
                                     </attribute>
+                                    <attribute name="fecha_publicacion" type="date" use="required" />
+
                                 </complexType>
                             </element>
-                            <element name="indice_periodico"/>
                         </sequence>
-
-
-                        <attribute name="id" use="required">
-                            <simpleType>
-                                <restriction base="string">
-                                    <length value="5"></length>
-                                </restriction>
-                            </simpleType>
-                        </attribute>
-                        <attribute name="tipo_clase" use="required">
-                            <simpleType>
-                                <restriction base="string">
-                                    <enumeration value="nacional" />
-                                    <enumeration value="internacional" />
-                                </restriction>
-                            </simpleType>
-                        </attribute>
-                        <attribute name="fecha_publicacion" type="date" use="required" />
-
                     </complexType>
                 </element>
 
-
-            </choice>
+            </sequence>
         </complexType>
     </element>
 

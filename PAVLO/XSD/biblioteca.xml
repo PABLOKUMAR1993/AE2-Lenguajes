@@ -6,52 +6,58 @@
 
     <!-- Libro -->
 
-    <libro id="L1001" tipo_clase="novela" numero_paginas_libro="215">
-        <titulo_libro>
+    <libros>
+        <libro id="L1001" tipo_clase="novela" numero_paginas_libro="215">
+            <titulo_libro>
             Título del Libro.
         </titulo_libro>
-        <capitulo_libro numero_paginas_capitulo="25">
-            <titulo_capitulo>
+            <capitulo_libro numero_paginas_capitulo="25">
+                <titulo_capitulo>
                 Nombre del primer capitulo.
             </titulo_capitulo>
-            <contenido_capitulo enlace_capitulo="enlace" />
-        </capitulo_libro>
-        <indice_libro>
+                <contenido_capitulo enlace_capitulo="enlace" />
+            </capitulo_libro>
+            <indice_libro>
             El indice del libro.
         </indice_libro>
-        <sinopsis_libro>
+            <sinopsis_libro>
             La sinopsis del libro.
         </sinopsis_libro>
-    </libro>
+        </libro>
+    </libros>
 
     <!-- Revista -->
 
-    <revista id="R2001" tipo_clase="informatica" numero_paginas_revista="33">
-        <titulo_revista>
+    <revistas>
+        <revista id="R2001" tipo_clase="informatica" numero_paginas_revista="33">
+            <titulo_revista>
             Título de la Revista.
         </titulo_revista>
-        <numero_revista>
+            <numero_revista>
             002
         </numero_revista>
-        <indice_revista>
+            <indice_revista>
             El indice de la Revista.
         </indice_revista>
-        <seccion_revista numero_paginas_seccion="7">
-            <contenido_revista enlace_cont="enlace"/>
-        </seccion_revista>
-    </revista>
+            <seccion_revista numero_paginas_seccion="7">
+                <contenido_revista enlace_cont="enlace" />
+            </seccion_revista>
+        </revista>
+    </revistas>
 
     <!-- Periodico -->
 
-    <periodico id="P3001" tipo_clase="nacional" fecha_publicacion="2022-05-25">
-        <seccion_periodico tipo_seccion="economica">
-            <articulo_periodico autor="nombre">
-                <contenido_articulo enlace_periodico="enlace"/>
-            </articulo_periodico>
-        </seccion_periodico>
-        <indice_periodico>
+    <periodicos>
+        <periodico id="P3001" tipo_clase="nacional" fecha_publicacion="2022-05-25">
+            <seccion_periodico tipo_seccion="economica">
+                <articulo_periodico autor="nombre">
+                    <contenido_articulo enlace_periodico="enlace" />
+                </articulo_periodico>
+            </seccion_periodico>
+            <indice_periodico>
             El índice del periodico.
         </indice_periodico>
-    </periodico>
+        </periodico>
+    </periodicos>
 
 </biblioteca>
