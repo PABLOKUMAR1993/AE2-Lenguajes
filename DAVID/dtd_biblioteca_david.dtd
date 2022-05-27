@@ -7,7 +7,7 @@
 
     <!-- Elementos de Libros -->
     <!ELEMENT libros (libro*)>
-    <!ELEMENT libro (titulo_libro+, indice_libro+, sinopsis_libro+, capitulos_libros+)>
+    <!ELEMENT libro (titulo_libro, indice_libro, sinopsis_libro, capitulos_libros+)>
     <!ELEMENT titulo_libro ( #PCDATA )>
     <!ELEMENT indice_libro ( #PCDATA )>
     <!ELEMENT sinopsis_libro ( #PCDATA )>
@@ -27,7 +27,7 @@
 
     <!-- Elementos de Revistas -->
     <!ELEMENT revistas (revista*)>
-    <!ELEMENT revista (titulo_revista+, numero_revista+, indice_revista+, secciones_revista)>
+    <!ELEMENT revista (titulo_revista, numero_revista, indice_revista, secciones_revista+)>
     <!ELEMENT titulo_revista ( #PCDATA )>
     <!ELEMENT numero_revista ( #PCDATA )>
     <!ELEMENT indice_revista ( #PCDATA )>
@@ -48,7 +48,7 @@
 
     <!-- Elementos de Periodicos -->
     <!ELEMENT periodicos (periodico*)>
-    <!ELEMENT periodico (titulo_periodico+, indice_periodico+, secciones_periodico+)>
+    <!ELEMENT periodico (titulo_periodico, indice_periodico, secciones_periodico+)>
     <!ELEMENT titulo_periodico (#PCDATA)>
     <!ELEMENT indice_periodico (#PCDATA)>
     <!ELEMENT secciones_periodico (seccion_periodico+)>
