@@ -9,8 +9,8 @@
     <libros>
         <libro id="L1001" tipo_clase="novela" numero_paginas_libro="215">
             <titulo_libro>
-            Título del Libro.
-        </titulo_libro>
+                Título del Libro.
+            </titulo_libro>
             <capitulo_libro numero_paginas_capitulo="25">
                 <titulo_capitulo>
                 Nombre del primer capitulo.
@@ -19,7 +19,7 @@
             </capitulo_libro>
             <indice_libro>
             El indice del libro.
-        </indice_libro>
+            </indice_libro>
             <sinopsis_libro>
             La sinopsis del libro.
         </sinopsis_libro>

@@ -1,0 +1,66 @@
+
+<!-- GENERAL -->
+
+<!ELEMENT biblioteca (libros,revistas,periodicos)>
+
+<!-- LIBROS -->
+
+    <!-- Elementos de Libros -->
+    <!ELEMENT libros (libro*)>
+    <!ELEMENT libro (titulo_libro, indice_libro, sinopsis_libro, capitulos_libros+)>
+    <!ELEMENT titulo_libro ( #PCDATA )>
+    <!ELEMENT indice_libro ( #PCDATA )>
+    <!ELEMENT sinopsis_libro ( #PCDATA )>
+    <!ELEMENT capitulos_libros (capitulo_libro+)>
+    <!ELEMENT capitulo_libro (titulo_capitulo+, contenido_capitulo+)>
+    <!ELEMENT titulo_capitulo ( #PCDATA )>
+    <!ELEMENT contenido_capitulo ( #PCDATA )>
+
+    <!-- Atributos de Libros -->
+    <!ATTLIST libro id ID #REQUIRED>
+    <!ATTLIST libro tipo_clase ( novela | infantil | didactico ) #REQUIRED>
+    <!ATTLIST libro numero_paginas_libro CDATA #REQUIRED>
+    <!ATTLIST capitulo_libro numero_paginas_capitulo CDATA #REQUIRED>
+    <!ATTLIST contenido_capitulo enlace_capitulo  CDATA #REQUIRED>
+
+<!-- REVISTAS -->
+
+    <!-- Elementos de Revistas -->
+    <!ELEMENT revistas (revista*)>
+    <!ELEMENT revista (titulo_revista, numero_revista, indice_revista, secciones_revista+)>
+    <!ELEMENT titulo_revista ( #PCDATA )>
+    <!ELEMENT numero_revista ( #PCDATA )>
+    <!ELEMENT indice_revista ( #PCDATA )>
+    <!ELEMENT secciones_revista (seccion_revista)>
+    <!ELEMENT seccion_revista (titulo_seccion+, contenido_seccion_enlace+)>
+    <!ELEMENT titulo_seccion ( #PCDATA )>
+    <!ELEMENT contenido_seccion_enlace ( #PCDATA )>
+    <!ELEMENT contenido_seccion_revista ( #PCDATA )>
+
+    <!-- Atritubos de Revistas -->
+    <!ATTLIST revista id ID #REQUIRED>
+    <!ATTLIST revista tipo_clase ( informatica | corazon | coches | investigacion | otras ) #REQUIRED>
+    <!ATTLIST revista numero_paginas_revista CDATA #REQUIRED>
+    <!ATTLIST seccion_revista numero_paginas_seccion CDATA #REQUIRED>
+    <!ATTLIST contenido_seccion_enlace enlace_revista CDATA #REQUIRED>
+
+<!-- PERIÓDICOS -->
+
+    <!-- Elementos de Periodicos -->
+    <!ELEMENT periodicos (periodico*)>
+    <!ELEMENT periodico (titulo_periodico, indice_periodico, secciones_periodico+)>
+    <!ELEMENT titulo_periodico (#PCDATA)>
+    <!ELEMENT indice_periodico (#PCDATA)>
+    <!ELEMENT secciones_periodico (seccion_periodico+)>
+    <!ELEMENT seccion_periodico (articulos_seccion+)>
+    <!ELEMENT articulos_seccion (articulo_seccion+)>
+    <!ELEMENT articulo_seccion (contenido_articulo_enlace+)>
+    <!ELEMENT contenido_articulo_enlace (#PCDATA)>
+
+    <!-- Atritubos de Periodicos -->
+    <!ATTLIST periodico id ID #REQUIRED>
+    <!ATTLIST periodico tipo_clase ( nacional | internacional ) #REQUIRED>
+    <!ATTLIST periodico fecha_publicacion CDATA #REQUIRED>
+    <!ATTLIST seccion_periodico tipo_seccion ( economica | opinion | deportes | nacional | internacional ) #REQUIRED>
+    <!ATTLIST articulo_seccion autor CDATA #REQUIRED>
+    <!ATTLIST contenido_articulo_enlace enlace_periodico CDATA #REQUIRED>
