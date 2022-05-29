@@ -75,7 +75,7 @@ Requerimiento 2
 <!-- AÑADIMOS LOS PERIÓDICOS -->
 
     <periodicos>
-        <periodico id="P0001" tipo_clase="nacional" fecha_publicacion="03/05/2022">
+        <periodico id="P0001" tipo_clase="nacional" fecha_publicacion="2022-03-05">
             <titulo_periodico>El Pais</titulo_periodico>
             <indice_periodico> Este es el índice del periodico </indice_periodico> 
             <secciones_periodico>

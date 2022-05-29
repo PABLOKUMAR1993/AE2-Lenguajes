@@ -1,68 +1,48 @@
-<?xml version="1.0"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema">
-    <annotation>
-        <documentation>
-            Esquema que marca la estructura de un libro de la libreria "Paco's Library"
-         </documentation>
-    </annotation>
-    <!-- El nodo raiz se llama biblioteca-->
     <element name="biblioteca">
         <complexType>
             <sequence>
-
-<!-- Elementos libros-->            
+<!-- AÑADIMOS LOS LIBROS-->
                 <element name="libros">
-                    <annotation>
-                    <documentation> AÑADIMOS LOS LIBROS</documentation>
-                    </annotation>
-                    <!-- Elemento libro-->
                     <complexType>
                         <sequence>
                             <element name="libro">
                                 <complexType>
                                     <sequence>
-                                        <element name="titulo_libro" type="string"></element>
-                                        <element name="indice_libro" type="string"></element>
-                                        <element name="sinopsis_libro" type="string"></element>
+                                        <element name="titulo_libro" type="string"/>
+                                        <element name="indice_libro" type="string"/>
+                                        <element name="sinopsis_libro" type="string"/>
                                         <element name="capitulos_libros">
                                             <complexType>
                                                 <sequence>
-                                                    <element name="capitulo_libro"> 
+                                                    <element name="capitulo_libro" maxOccurs="unbounded">
                                                         <complexType>
                                                             <sequence>
-                                                                <element name="titulo_capitulo" type="string"></element>
+                                                                <element name="titulo_capitulo" type="string"/>
                                                                 <element name="contenido_capitulo">
                                                                     <complexType>
-                                                                        <simpleContent>
-                                                                            <extension base="string">
-                                                                                <!-- Atributo del contenido_capitulo-->
-                                                                                <attribute name="enlace_capitulo" type="string"/>
-                                                                            </extension>
-                                                                        </simpleContent>
+                                                                        <sequence></sequence>
+                                                                        <attribute name="enlace_capitulo" type="string"/>
                                                                     </complexType>
                                                                 </element>
                                                             </sequence>
-                                                            <!-- Atributo del capitulo_libro-->
-                                                            <attribute name="numero_paginas_capitulo" type="short" use="optional"/>
+                                                            <attribute name="numero_paginas_capitulo" type="string"/>
                                                         </complexType>
                                                     </element>
                                                 </sequence>
                                             </complexType>
                                         </element>
                                     </sequence>
-                                    <!-- Atributos de libro-->
                                     <attribute name="id" type="string"/>
                                     <attribute name="tipo_clase" type="string"/>
                                     <attribute name="numero_paginas_libro" type="short"/>
                                 </complexType>
-                            </element>   
+                            </element>
                         </sequence>
                     </complexType>
-                </element> 
-                
-<!-- Elementos revistas-->
+                </element>
+<!-- AÑADIMOS LAS REVISTAS-->
                 <element name="revistas">
-                    <!-- Elemento revista-->
                     <complexType>
                         <sequence>
                             <element name="revista">
@@ -74,92 +54,77 @@
                                         <element name="secciones_revista">
                                             <complexType>
                                                 <sequence>
-                                                    <element name="seccion_revista">
+                                                    <element name="seccion_revista" maxOccurs="unbounded">
                                                         <complexType>
                                                             <sequence>
                                                                 <element name="titulo_seccion" type="string"/>
                                                                 <element name="contenido_seccion_enlace">
                                                                     <complexType>
-                                                                        <simpleContent>
-                                                                            <extension base="string">
-                                                                                <!-- Atributos de contenido_seccion_enlace-->
-                                                                                <attribute name="enlace_revista" type="string"/>
-                                                                            </extension>
-                                                                        </simpleContent>
+                                                                        <sequence></sequence>
+                                                                        <attribute name="enlace_revista" type="string"/>
                                                                     </complexType>
                                                                 </element>
                                                             </sequence>
-                                                        <!-- Atributos de seccion_revista-->
-                                                        <attribute name="numero_paginas_seccion" type="byte"/>
+                                                            <attribute name="numero_paginas_seccion" type="short"/>
                                                         </complexType>
                                                     </element>
                                                 </sequence>
                                             </complexType>
                                         </element>
                                     </sequence>
-                                <!-- Atributos de revista-->
-                                <attribute name="id" type="string"/>
-                                <attribute name="tipo_clase" type="string"/>
-                                <attribute name="numero_paginas_revista" type="short"/>
+                                    <attribute name="id" type="string"/>
+                                    <attribute name="tipo_clase" type="string"/>
+                                    <attribute name="numero_paginas_revista" type="short"/>
                                 </complexType>
                             </element>
                         </sequence>
                     </complexType>
                 </element>
-
-<!-- Elementos periodicos-->
+<!-- AÑADIMOS LOS PERIDICOS-->
                 <element name="periodicos">
-                    <!-- Elemento periodico-->
                     <complexType>
                         <sequence>
                             <element name="periodico">
                                 <complexType>
-                                <sequence>
-                                    <element name="titulo_periodico" type="string"/>
-                                    <element name="indice_periodico" type="string"/>
-                                    <element name="secciones_periodico">
-                                        <complexType>
-                                            <sequence>
-                                                <element name="seccion_periodico">
-                                                    <complexType>
-                                                        <sequence>
-                                                            <element name="articulos_seccion">
-                                                                <complexType>
-                                                                    <sequence>
-                                                                        <element name="articulo_seccion">
-                                                                            <complexType>
-                                                                                <sequence>
-                                                                                    <element name="contenido_articulo_enlace">
-                                                                                        <complexType>
-                                                                                            <simpleContent>
-                                                                                                <extension base="string">
-                                                                                                    <!-- Atributos de contenido_articulo_enlace-->
-                                                                                                    <attribute  name="enlace_periodico" type="string"/>
-                                                                                                </extension>
-                                                                                            </simpleContent>
-                                                                                        </complexType>
-                                                                                    </element>
-                                                                                </sequence>
-                                                                            <!-- Atributos de articulo_seccion-->
-                                                                            <attribute name="autor" type="string"/>
-                                                                            </complexType>
-                                                                        </element>
-                                                                    </sequence>
-                                                                </complexType>
-                                                            </element>
-                                                        </sequence>
-                                                    <!-- Atributos de seccion_periodico-->
-                                                    <attribute name="tipo_seccion" type="string"/>
-                                                    </complexType>
-                                                </element>
-                                            </sequence>
-                                        </complexType>
-                                    </element>
-                                </sequence>
-                                <!-- Atributos de periodico-->
-                                <attribute name="id" type="string"/>
-                                <attribute name="tipo_clase" type="string"/>
-                                <attribute name="fecha_publicacion" type="string"/>
+                                    <sequence>
+                                        <element name="titulo_periodico" type="string"/>
+                                        <element name="indice_periodico" type="string"/>
+                                        <element name="secciones_periodico">
+                                            <complexType>
+                                                <sequence>
+                                                    <element name="seccion_periodico" maxOccurs="unbounded">
+                                                        <complexType>
+                                                            <sequence>
+                                                                <element name="articulos_seccion">
+                                                                    <complexType>
+                                                                        <sequence>
+                                                                            <element name="articulo_seccion" maxOccurs="unbounded">
+                                                                                <complexType>
+                                                                                    <sequence>
+                                                                                        <element name="contenido_articulo_enlace">
+                                                                                            <complexType>
+                                                                                                <sequence></sequence>
+                                                                                                <attribute name="enlace_periodico" type="string"/>
+                                                                                            </complexType>
+                                                                                        </element>
+                                                                                    </sequence>
+                                                                                    <attribute name="autor" type="string"/>
+                                                                                </complexType>
+                                                                            </element>
+                                                                        </sequence>
+                                                                    </complexType>
+                                                                </element>
+                                                            </sequence>
+                                                            <attribute name="tipo_seccion" type="string"/>
+                                                        </complexType>
+                                                    </element>
+                                                </sequence>
+                                            </complexType>
+                                        </element>
+                                    </sequence>
+                                    <attribute name="id" type="string"/>
+                                    <attribute name="tipo_clase" type="string"/>
+                                    <attribute name="fecha_publicacion" type="date"/>
                                 </complexType>
                             </element>
                         </sequence>
